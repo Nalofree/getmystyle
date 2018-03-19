@@ -1,16 +1,25 @@
-<!doctype html>
+<?php
+/**
+ * Created by PhpStorm.
+ * User: nalof
+ * Date: 20.03.2018
+ * Time: 4:27
+ */
+?>
+        <!doctype html>
 <html lang="{{ app()->getLocale() }}">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>{{title_case('getmystyle')}}</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <style>
             html, body {
                 background-color: #fff;
@@ -25,24 +34,18 @@
                 height: 100vh;
             }
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
             .position-ref {
                 position: relative;
             }
 
             .top-right {
-                position: absolute;
+                position: relative;
                 right: 10px;
                 top: 18px;
             }
 
             .content {
-                text-align: center;
+                /*text-align: center;*/
             }
 
             .title {
@@ -65,32 +68,23 @@
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-{{--            @if (Route::has('login'))--}}
-                <div class="top-right links">
-                    @if (Auth::check())
-                        {{--<a href="{{ url('/home') }}">Home</a>--}}
-                        <a href="{{ url('/home') }}">Личный кабинет</a>
-                    @else
-                        <a href="{{ url('/login') }}">Войти</a>
-                        <a href="{{ url('/register') }}">Зарегестрироваться</a>
-                    @endif
-                </div>
+        <div class="position-ref full-height">
+            {{--            @if (Route::has('login'))--}}
+            <div class="top-right links">
+                @if (Auth::check())
+                    {{--<a href="{{ url('/home') }}">Home</a>--}}
+                    <a href="{{ url('/home') }}">Личный кабинет</a>
+                @else
+                    <a href="{{ url('/login') }}">Войти</a>
+                    <a href="{{ url('/register') }}">Зарегестрироваться</a>
+                @endif
+            </div>
             {{--@endif--}}
 
-            <div class="content">
-                <div class="title m-b-md">
-                    GetMyStyle
-                </div>
-
-                {{--<div class="links">--}}
-                    {{--<a href="https://laravel.com/docs">Documentation</a>--}}
-                    {{--<a href="https://laracasts.com">Laracasts</a>--}}
-                    {{--<a href="https://laravel-news.com">News</a>--}}
-                    {{--<a href="https://forge.laravel.com">Forge</a>--}}
-                    {{--<a href="https://github.com/laravel/laravel">GitHub</a>--}}
-                {{--</div>--}}
+            <div class="content container">
+                @yield('content')
             </div>
         </div>
     </body>
 </html>
+

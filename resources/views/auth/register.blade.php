@@ -8,6 +8,9 @@
                 <div class="panel-heading">Регистриция</div>
 
                 <div class="panel-body">
+                    @if (session()->has('message'))
+                        <div class="alert alert-info">{{ session('message') }}</div>
+                    @endif
                     <form class="form-horizontal" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
 

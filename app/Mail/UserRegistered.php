@@ -11,6 +11,8 @@ class UserRegistered extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $user;
+
     /**
      * Create a new message instance.
      *
@@ -18,7 +20,7 @@ class UserRegistered extends Mailable
      */
     public function __construct()
     {
-        //
+        $this->user = $user;
     }
 
     /**
@@ -28,6 +30,7 @@ class UserRegistered extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        return $this->to($this->user->email)
+            ->view('auth.emails.confirm');
     }
 }

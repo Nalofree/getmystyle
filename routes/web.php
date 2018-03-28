@@ -15,25 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Route::get('/login', function () {
-//    return view('login');
-//});
-//
-//Route::get('/register', function () {
-//    return view('welcome');
-//});
-//
-//Route::get('/home', function () {
-////    return view('welcome');
-//    redirect('/');
-//});
-//
-//Route::get('/auth', function () {
-////    return view('welcome');
-////    redirect('/');
-//    return view('welcome');
-//});
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

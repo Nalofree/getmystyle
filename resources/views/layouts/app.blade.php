@@ -42,13 +42,13 @@
                         <!-- if user and guestLinks -->
                         @if (Auth::guest())
 {{--                            <li><a href="{{ route('/company') }}">Оплата</a></li>--}}
-                            <li><a href="{{ route('/company') }}">Компания</a></li>
-                            <li><a href="{{ route('/projects') }}">Проекты</a></li>
-                            <li><a href="{{ route('/profile') }}">Профайл</a></li>
+                            <li><a href="{{ route('company') }}">Компания</a></li>
+                            <li><a href="{{ route('projects') }}">Проекты</a></li>
+                            <li><a href="{{ route('profile') }}">Профайл</a></li>
                             {{--<li><a href="{{ route('/') }}">Зарегистрироваться</a></li>--}}
                         @else
-                            <li><a href="{{ route('/') }}">Войти</a></li>
-                            <li><a href="{{ route('/') }}">Зарегистрироваться</a></li>
+                            <li><a href="{{ route('home') }}">Войти</a></li>
+                            <li><a href="{{ route('home') }}">Зарегистрироваться</a></li>
                         @endif
                     </ul>
 

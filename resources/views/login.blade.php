@@ -6,7 +6,7 @@
  * Time: 4:26
  */
 ?>
-@extends('layout')
+@extends('layouts.app')
 @section('content')
     <h1>Вход</h1>
     <form action="/public/auth" method="post">

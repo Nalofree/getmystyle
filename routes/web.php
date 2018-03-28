@@ -22,3 +22,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('register/confirm/{token}', 'Auth\RegisterController@confirmEmail');
 
 Route::get('/profile', 'UserController@edit');
+Route::get('/company', 'CompanyController@edit');
+Route::get('/projects', 'ProjectController@edit');

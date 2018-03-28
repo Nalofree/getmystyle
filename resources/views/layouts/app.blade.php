@@ -45,9 +45,9 @@
                             <li><a href="{{ route('home') }}">Зарегистрироваться</a></li>
                         @else
                             {{--<li><a href="{{ route('/company') }}">Оплата</a></li>--}}
-                            <li><a href="{{ route('company') }}">Компания</a></li>
-                            <li><a href="{{ route('projects') }}">Проекты</a></li>
-                            <li><a href="{{ route('profile') }}">Профайл</a></li>
+                            <li><a href="{{ route('/company') }}">Компания</a></li>
+                            <li><a href="{{ route('/projects') }}">Проекты</a></li>
+                            <li><a href="{{ route('/profile') }}">Профайл</a></li>
                             {{--<li><a href="{{ route('/') }}">Зарегистрироваться</a></li>--}}
                         @endif
                     </ul>

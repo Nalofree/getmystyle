@@ -20,3 +20,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('register/confirm/{token}', 'Auth\RegisterController@confirmEmail');
+
+Route::get('/profile', 'Auth\RegisterController@confirmEmail');

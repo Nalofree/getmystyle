@@ -47,8 +47,8 @@
                             <li><a href="{{ route('/profile') }}">Профайл</a></li>
                             {{--<li><a href="{{ route('/') }}">Зарегистрироваться</a></li>--}}
                         @else
-                            {{--<li><a href="{{ route('/') }}">Войти</a></li>--}}
-                            {{--<li><a href="{{ route('/') }}">Зарегистрироваться</a></li>--}}
+                            <li><a href="{{ route('/') }}">Войти</a></li>
+                            <li><a href="{{ route('/') }}">Зарегистрироваться</a></li>
                         @endif
                     </ul>
 

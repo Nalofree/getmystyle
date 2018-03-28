@@ -44,6 +44,7 @@
                             <li><a href="{{ route('/') }}">Оплата</a></li>
                             <li><a href="{{ route('/') }}">Компания</a></li>
                             <li><a href="{{ route('/') }}">Проекты</a></li>
+                            <li><a href="{{ route('/') }}">Профайл</a></li>
                             {{--<li><a href="{{ route('/') }}">Зарегистрироваться</a></li>--}}
                         @else
                             {{--<li><a href="{{ route('/') }}">Войти</a></li>--}}

@@ -41,10 +41,10 @@
                             <li><a href="{{ route('/') }}">Link2</a></li>
                         <!-- if user and guestLinks -->
                         @if (Auth::guest())
-                            <li><a href="{{ route('/') }}">Оплата</a></li>
-                            <li><a href="{{ route('/') }}">Компания</a></li>
-                            <li><a href="{{ route('/') }}">Проекты</a></li>
-                            <li><a href="{{ route('/') }}">Профайл</a></li>
+{{--                            <li><a href="{{ route('/company') }}">Оплата</a></li>--}}
+                            <li><a href="{{ route('/company') }}">Компания</a></li>
+                            <li><a href="{{ route('/projects') }}">Проекты</a></li>
+                            <li><a href="{{ route('/profile') }}">Профайл</a></li>
                             {{--<li><a href="{{ route('/') }}">Зарегистрироваться</a></li>--}}
                         @else
                             {{--<li><a href="{{ route('/') }}">Войти</a></li>--}}

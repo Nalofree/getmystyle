@@ -36,7 +36,19 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        &nbsp;
+                        <!-- any guest Links -->
+                            <li><a href="{{ route('/') }}">Link1</a></li>
+                            <li><a href="{{ route('/') }}">Link2</a></li>
+                        <!-- if user and guestLinks -->
+                        @if (Auth::guest())
+                            <li><a href="{{ route('/') }}">Оплата</a></li>
+                            <li><a href="{{ route('/') }}">Компания</a></li>
+                            <li><a href="{{ route('/') }}">Проекты</a></li>
+                            {{--<li><a href="{{ route('/') }}">Зарегистрироваться</a></li>--}}
+                        @else
+                            {{--<li><a href="{{ route('/') }}">Войти</a></li>--}}
+                            {{--<li><a href="{{ route('/') }}">Зарегистрироваться</a></li>--}}
+                        @endif
                     </ul>
 
                     <!-- Right Side Of Navbar -->

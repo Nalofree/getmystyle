@@ -14,7 +14,7 @@ class AddCompanyFieldToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->штеупук('company_id');
+            $table->integer('company_id');
         });
     }
 

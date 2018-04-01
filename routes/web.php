@@ -14,10 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/profile', 'UserController@edit');
-Route::get('/company', 'CompanyController@edit');
-Route::get('/projects', 'ProjectController@edit');
+Route::get('/profile/{id}', 'UserController@edit');
+Route::post('/profile/save', 'UserController@save');
+Route::get('/company', ['uses' => 'CompanyController@edit','as' => '/company']);
+Route::get('/projects', ['uses' => 'ProjectController@edit', 'as' => '/projects']);
 
 Auth::routes();
 

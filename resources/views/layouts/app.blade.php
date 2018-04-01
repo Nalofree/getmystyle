@@ -37,8 +37,8 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         <!-- any guest Links -->
-                            <li><a href="{{ route('home') }}">Link1</a></li>
-                            <li><a href="{{ route('home') }}">Link2</a></li>
+                            {{--<li><a href="{{ route('home') }}">Link1</a></li>--}}
+                            {{--<li><a href="{{ route('home') }}">Link2</a></li>--}}
                         <!-- if user and guestLinks -->
                         @if (Auth::guest())
                             <li><a href="{{ route('home') }}">Войти</a></li>
@@ -47,7 +47,7 @@
                             {{--<li><a href="{{ route('/company') }}">Оплата</a></li>--}}
                             <li><a href="{{ route('/company') }}">Компания</a></li>
                             <li><a href="{{ route('/projects') }}">Проекты</a></li>
-                            <li><a href="{{ route('/profile') }}">Профайл</a></li>
+                            <li><a href="{{ url('/profile', ['id'=>Auth::user()->id,]) }}">Профайл</a></li>
                             {{--<li><a href="{{ route('/') }}">Зарегистрироваться</a></li>--}}
                         @endif
                     </ul>

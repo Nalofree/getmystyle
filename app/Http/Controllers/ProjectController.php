@@ -8,6 +8,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class ProjectController extends Controller
 {
@@ -29,7 +31,7 @@ class ProjectController extends Controller
     public function index()
     {
 //        return view('home');
-        return void;
+        return "index";
     }
 
     /**
@@ -40,6 +42,28 @@ class ProjectController extends Controller
     public function edit()
     {
 //        return view('home');
-        return void;
+        return "edit";
+    }
+
+    /**
+     * Add project.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function add()
+    {
+//        return view('home');
+        return "edit";
+    }
+
+    /**
+     * Delete project.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function delete()
+    {
+//        return view('home');
+        return "edit";
     }
 }

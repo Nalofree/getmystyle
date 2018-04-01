@@ -15,7 +15,7 @@
                         </div>
                     @endif
 
-                    Вы вошли!
+                    Вы вошли как {{ Auth::user()->name }}!
                 </div>
             </div>
         </div>

@@ -15,7 +15,17 @@
                         </div>
                     @endif
 
-                    Вы вошли как {{ Auth::user()->name }}!
+                    <h1> {{$user->name}} </h1>
+                    <p>
+                        Контактные данные:<br>
+                        Email: {{$user->email}}
+                    </p>
+                    <p>
+                        Компания:<br>
+                        {{$company->name}}<br>
+                        {{$company->description}}
+                    </p>
+
                 </div>
             </div>
         </div>

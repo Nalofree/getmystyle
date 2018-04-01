@@ -31,9 +31,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="description">Описание компании</label>
-                                <textarea name="description" class="form-control" id="description" placeholder="Описние" required>
-                                    @if ($company != null){{ $company->description }}@endif
-                                </textarea>
+                                <textarea name="description" class="form-control" id="description" placeholder="Описние" required>@if ($company != null){{ $company->description }}@endif</textarea>
                             </div>
                             @if ($company != null)
                                 <button type="submit" class="btn btn-success">Сохранить</button>

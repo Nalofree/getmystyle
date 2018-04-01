@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -25,6 +27,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        dump(Auth::user()->company_id);
+        $users = DB::select('select * from users where id = ?', [Auth::user()->id]);;
+        $user = $users[0];
+        $companies = DB::select('select * from companies where id = ?', [Auth::user()->company_id]);;
+        $company = $companies[0];
+        return view('home', [
+            'company' => $company,
+            'user' => $user,
+        ]);
     }
 }

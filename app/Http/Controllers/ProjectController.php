@@ -42,7 +42,7 @@ class ProjectController extends Controller
     public function edit()
     {
 //        return view('home');
-        return "edit";
+        return "Опрос пока создатиь нельзя";
     }
 
     /**
@@ -53,7 +53,7 @@ class ProjectController extends Controller
     public function add()
     {
 //        return view('home');
-        return "edit";
+        return "Опрос пока создатиь нельзя";
     }
 
     /**
@@ -64,6 +64,6 @@ class ProjectController extends Controller
     public function delete()
     {
 //        return view('home');
-        return "edit";
+        return "Опрос пока создатиь нельзя";
     }
 }

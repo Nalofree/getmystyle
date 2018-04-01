@@ -13,6 +13,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Response;
 use Symfony\Component\Finder\Exception\AccessDeniedException;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Input;
+
 
 class CompanyController extends Controller
 {
@@ -42,20 +45,16 @@ class CompanyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request, $id=null)
+    public function edit(Request $request)
     {
 //        return view('home');
+        $id = Auth::user()->company_id;
         if ($id == null) {
             $company = null;
         }else{
-            if ($id != Auth::user()->compamy_id) {
-                return redirect('login');
-            }
-            $company = Company::where('id', '=', $id)->firstOrFail();
+            $companies = DB::select('select * from companies where id = ?', [$id]);;
+            $company = $companies[0];
         }
-
-
-        dump($company);
 
         return view('company.edit',[
             'company' => $company,
@@ -69,12 +68,11 @@ class CompanyController extends Controller
      */
     public function add(Request $request)
     {
-//        return view('home');
-//        return "edit";
-        $company = new Company;
-        $company->name = '123';
-        $company->description = '123';
-        $company->save();
+        DB::insert('insert into `companies` (name, description) values (?, ?)', [Input::get('name'), Input::get('description')]);
+        $id = DB::getPdo()->lastInsertId();;
+        DB::update('update users set company_id =  ? WHERE id = ?', [$id, Auth::user()->id]);
+        $request->session()->flash('message', 'Данные сохранены!');
+        return redirect('company');
     }
 
     /**
@@ -82,10 +80,13 @@ class CompanyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function save()
+    public function save(Request $request)
     {
 //        return view('home');
-        return "edit";
+        DB::update('update companies set name = ?, description = ? where id = ?', [Input::get('name'), Input::get('description'), Auth::user()->company_id]);
+        $request->session()->flash('message', 'Данные сохранены!');
+        return redirect('company');
+
     }
 
     /**

@@ -17,6 +17,8 @@ Route::get('/', function () {
 Route::get('/profile/{id}', 'UserController@edit');
 Route::post('/profile/save', 'UserController@save');
 Route::get('/company', ['uses' => 'CompanyController@edit','as' => '/company']);
+Route::post('/company/add', 'CompanyController@add');
+Route::post('/company/save', 'CompanyController@save');
 Route::get('/projects', ['uses' => 'ProjectController@edit', 'as' => '/projects']);
 
 Auth::routes();

@@ -64,7 +64,7 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function save(Request $request, $id)
+    public function save(Request $request)
     {
         $user = User::where('id', '=', Input::get('id'))->firstOrFail();
 

@@ -31,7 +31,11 @@ class HomeController extends Controller
         $users = DB::select('select * from users where id = ?', [Auth::user()->id]);;
         $user = $users[0];
         $companies = DB::select('select * from companies where id = ?', [Auth::user()->company_id]);;
-        $company = $companies[0];
+        if ($companies) {
+            $company = $companies[0];
+        }else{
+            $company = null;
+        }
         return view('home', [
             'company' => $company,
             'user' => $user,

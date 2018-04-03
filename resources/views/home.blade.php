@@ -20,11 +20,13 @@
                         Контактные данные:<br>
                         Email: {{$user->email}}
                     </p>
-                    <p>
-                        Компания:<br>
-                        {{$company->name}}<br>
-                        {{$company->description}}
-                    </p>
+                    @if ($company)
+                        <p>
+                            Компания:<br>
+                            {{$company->name}}<br>
+                            {{$company->description}}
+                        </p>
+                    @endif
 
                 </div>
             </div>

@@ -38,11 +38,11 @@
                             <form action="{{ url('/projects/add') }}" method="post">
                                 {{ csrf_field() }}
                                 <div class="form-group">
-                                    <label for="name">Название компании</label>
+                                    <label for="name">Название проекта</label>
                                     <input name="name" type="text" class="form-control" id="name" placeholder="Название" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="description">Описание компании</label>
+                                    <label for="description">Описание проекта</label>
                                     <textarea name="description" class="form-control" id="description" placeholder="Описние" required></textarea>
                                 </div>
                                     <button type="submit" class="btn btn-success">Добавить</button>

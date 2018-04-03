@@ -19,7 +19,11 @@ Route::post('/profile/save', 'UserController@save');
 Route::get('/company', ['uses' => 'CompanyController@edit','as' => '/company']);
 Route::post('/company/add', 'CompanyController@add');
 Route::post('/company/save', 'CompanyController@save');
-Route::get('/projects', ['uses' => 'ProjectController@edit', 'as' => '/projects']);
+Route::get('/projects', 'ProjectController@show');
+Route::get('/projects/showcurrent/{id}', 'ProjectController@showCurrent');
+Route::post('/projects/add', 'ProjectController@add');
+Route::get('/projects/edit/{id}', 'ProjectController@edit');
+Route::post('/projects/save/{id}', 'ProjectController@save');
 
 Auth::routes();
 

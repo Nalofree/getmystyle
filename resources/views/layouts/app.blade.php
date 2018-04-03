@@ -46,7 +46,7 @@
                         @else
                             {{--<li><a href="{{ route('/company') }}">Оплата</a></li>--}}
                             <li><a href="{{ route('/company') }}">Компания</a></li>
-                            <li><a href="{{ route('/projects') }}">Проекты</a></li>
+                            <li><a href="{{ url('/projects') }}">Проекты</a></li>
                             <li><a href="{{ url('/profile', ['id'=>Auth::user()->id,]) }}">Профайл</a></li>
                             {{--<li><a href="{{ route('/') }}">Зарегистрироваться</a></li>--}}
                         @endif
@@ -76,6 +76,7 @@
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
+                                    <li><a href="{{ url('home') }}">Личный кабинет</a></li>
                                 </ul>
                             </li>
                         @endif

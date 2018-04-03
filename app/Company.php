@@ -2,12 +2,23 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 
-class Company extends Authenticatable
+class Company extends Model
 {
-    use Notifiable;
+    /**
+     * Table.
+     *
+     * @var string
+     */
+    protected $table = 'companies';
+
+    /**
+     * Primery key.
+     *
+     * @var integer
+     */
+    protected $primaryKey = 'id';
 
     /**
      * The attributes that are mass assignable.
@@ -15,15 +26,7 @@ class Company extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'description',
+        'name', 'description'
     ];
 
-    public static function boot()
-    {
-        parent::boot();
-
-        static::creating(function ($company) {
-            $company->token = str_random(30);
-        });
-    }
 }

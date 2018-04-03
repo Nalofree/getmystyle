@@ -28,6 +28,8 @@
                         </p>
                     @endif
 
+                        <a href="{{url('oreders')}}" class="btn btn-success" disabled>Мои отчеты</a>
+
                 </div>
             </div>
         </div>

@@ -23,7 +23,7 @@
                 <h3>{{ $company->name }}</h3>
                 <p>{{ $company->description }}</p>
                 <p>{{ $user->position }}</p>
-                <a class="btn btn-lg btn-default" href="{{ url('/profile',['id'=>$user->id,]) }}">Изменить информацию</a>
+                <a class="btn btn-lg btn-default" href="{{ url('/profile',['id'=>$user->id,]) }}">Изменить</a>
             </div>
             <div class="col-md-10 project-content">
                 <h4>Этапы</h4>

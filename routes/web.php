@@ -24,6 +24,7 @@ Route::get('/projects/showcurrent/{id}', 'ProjectController@showCurrent');
 Route::post('/projects/add', 'ProjectController@add');
 Route::get('/projects/edit/{id}', 'ProjectController@edit');
 Route::post('/projects/save/{id}', 'ProjectController@save');
+Route::get('/billing', 'ProjectController@billing');
 
 Auth::routes();
 

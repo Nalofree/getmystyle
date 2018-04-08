@@ -7,3 +7,17 @@
 
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+// project
+
+.project{
+  &-sidebar {
+    padding-right: 10px;
+    border-right: 1px solid #444;
+  }
+
+  &-sidebar {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+}

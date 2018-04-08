@@ -101,11 +101,19 @@ class ProjectController extends Controller
             $project = Project::whereId($id)->first();
             if (!$project) {
                 $project = null;
+                $company = null;
+            }else{
+                $company = Company::whereId($project->id)->first();
+                if (!$company) {
+                    $company = null;
+                }
             }
         }
 
         return view('project.showcurent',[
-            'project' => $project,
+            'project'   => $project,
+            'user'      => Auth::user(),
+            'company'      => $company,
         ]);
     }
 
@@ -148,5 +156,16 @@ class ProjectController extends Controller
     {
 //        return view('home');
         return "edit";
+    }
+
+    /**
+     * Billing project.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function billing()
+    {
+//        return view('home');
+        return "Оплата созданых опросов";
     }
 }

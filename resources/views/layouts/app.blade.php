@@ -45,6 +45,7 @@
                             <li><a href="{{ route('home') }}">Зарегистрироваться</a></li>
                         @else
                             {{--<li><a href="{{ route('/company') }}">Оплата</a></li>--}}
+                            <li><a href="{{ url('/billing') }}">Оплата</a></li>
                             <li><a href="{{ route('/company') }}">Компания</a></li>
                             <li><a href="{{ url('/projects') }}">Проекты</a></li>
                             <li><a href="{{ url('/profile', ['id'=>Auth::user()->id,]) }}">Профайл</a></li>
@@ -56,8 +57,8 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                            <li><a href="{{ route('login') }}">Войти</a></li>
-                            <li><a href="{{ route('register') }}">Зарегистрироваться</a></li>
+                            {{--<li><a href="{{ route('login') }}">Войти</a></li>--}}
+                            {{--<li><a href="{{ route('register') }}">Зарегистрироваться</a></li>--}}
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
